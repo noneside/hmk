@@ -1,0 +1,20 @@
+<mujoco model="RM65-6F">
+<compiler angle="radian"/>
+<asset>
+<texture name="grid" type="2d" builtin="checker" rgb1=".1 .2 .3" rgb2=".2 .3 .4" width="3000" height="3000"/>
+<material name="grid" texture="grid" texrepeat="1 1" texuniform="true"/>
+<material name="arm_material" rgba="0.8 0.6 0.4 1"/>
+<mesh name="o3d" file="mesh.obj" scale="1 1 1"/>
+
+</asset>
+<worldbody>
+<!--  添加光源  -->
+<light diffuse=".5 .5 .5" pos="0 0 100" dir="0 0 -1"/>
+<!--  地面  -->
+<geom type="plane" size="10 10 1" pos="0 0 -1" material="grid"/>
+<body pos="0 0 1" >
+
+<geom type = "mesh" mesh='o3d'/>
+</body>
+</worldbody>
+</mujoco>
